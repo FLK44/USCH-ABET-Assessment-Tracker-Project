@@ -5,4 +5,12 @@
 - Record number of students per major (i.e. 25 cs, 5 ce).  
 - Allow dynamic document uploads for multiple supporting files.  
 - Mechanism to record instructor-assigned scores (i.e. 20 students at metric X, 3 students at metric Y).  
-- Store submissions securely for administrative access and reporting.  
+- Store submissions securely for administrative access and reporting.
+
+## Implementation Details
+
+- Developed using Visual Studio IDE.
+- Built with Windows Forms (.NET Framework)
+- Uses C# as the priamry programming language.
+- Data storage with SQL Server
+  
