@@ -11,6 +11,6 @@
 
 - Developed using Visual Studio IDE.
 - Built with Windows Forms (.NET Framework)
-- Uses C# as the priamry programming language.
+- Uses C# as the primary programming language.
 - Data storage with SQL Server
   
