@@ -1,0 +1,14 @@
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accreditation Assessment Tracker.csproj.AssemblyReference.cache
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Assessments.resources
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Courses.resources
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Dashboard.resources
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Programs.resources
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Properties.Resources.resources
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accreditation Assessment Tracker.csproj.GenerateResource.cache
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accreditation Assessment Tracker.csproj.CoreCompileInputs.cache
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\bin\Debug\Accredition Assessment Tracker.exe.config
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\bin\Debug\Accredition Assessment Tracker.exe
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\bin\Debug\Accredition Assessment Tracker.pdb
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accredition Assessment Tracker.exe
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accredition Assessment Tracker.pdb
+C:\Users\mnguy\OneDrive\Desktop\Accreditation Assessment Tracker\obj\Debug\Accredition Assessment Tracker.exe.config
