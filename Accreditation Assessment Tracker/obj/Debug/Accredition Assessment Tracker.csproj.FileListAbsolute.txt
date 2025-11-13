@@ -1,0 +1,27 @@
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\bin\Debug\Accredition Assessment Tracker.exe.config
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\bin\Debug\Accredition Assessment Tracker.exe
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\bin\Debug\Accredition Assessment Tracker.pdb
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.csproj.AssemblyReference.cache
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Dashboard.resources
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Properties.Resources.resources
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.csproj.GenerateResource.cache
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.csproj.CoreCompileInputs.cache
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.exe
+C:\Assessment Tracker Project\USCH-ABET-Assessment-Tracker-Project-ViBranch\USCH-ABET-Assessment-Tracker-Project-ViBranch\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.pdb
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.csproj.AssemblyReference.cache
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Dashboard.resources
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Properties.Resources.resources
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.csproj.GenerateResource.cache
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.csproj.CoreCompileInputs.cache
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.exe
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.pdb
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\bin\Debug\Accredition Assessment Tracker.exe.config
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\bin\Debug\Accredition Assessment Tracker.exe
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\bin\Debug\Accredition Assessment Tracker.pdb
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Assessments.resources
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Courses.resources
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Enrollments.resources
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Students.resources
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition Assessment Tracker.exe.config
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Account.resources
+C:\Users\mnguy\OneDrive\Desktop\Accredition Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Login.resources
