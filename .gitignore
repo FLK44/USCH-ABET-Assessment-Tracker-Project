@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Accreditation Assessment Tracker/obj/Debug
+/Accreditation Assessment Tracker/.vs/Accreditation Assessment Tracker/v18
+/Accreditation Assessment Tracker/.vs/Accreditation Assessment Tracker/FileContentIndex
+/.vs/USCH-ABET-Assessment-Tracker-Project.slnx/v18
+/Accreditation Assessment Tracker/.vs
+/.vs
+/Accreditation Assessment Tracker/bin/Debug
+/Accreditation Assessment Tracker/packages
+/Accreditation Assessment Tracker/packages.config
