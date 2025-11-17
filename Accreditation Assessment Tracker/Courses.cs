@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accredition_Assessment_Tracker.Handler;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,10 @@ namespace Accredition_Assessment_Tracker
 
         private void Backbtn_Click(object sender, EventArgs e)
         {
+            Database db = new Database();
+            db.initDB();
+            db.ClearDB();   //debug - clears DB when back button pressed
+
             Dashboard dashboard = new Dashboard();
             dashboard.StartPosition = FormStartPosition.CenterScreen;
             dashboard.Show();

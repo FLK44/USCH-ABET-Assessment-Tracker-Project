@@ -41,7 +41,7 @@ namespace Accredition_Assessment_Tracker.Handler
                 string createAssmntTable = @"CREATE TABLE IF NOT EXISTS Assessments ( Id INTEGER PRIMARY KEY AUTOINCREMENT, AsmntName TEXT, AsmntType TEXT NOT NULL, AsmntDate TEXT NOT NULL )";
                 string createProgTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, ProgName TEXT UNIQUE NOT NULL, Facilities TEXT," +
                                                                                          " Faculty TEXT, Curriculum TEXT, StudentNum INTEGER, Outcomes TEXT )";
-                string createCrsTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
+                string createCrsTable = @"CREATE TABLE IF NOT EXISTS Courses ( Id INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
                                                                                          "PreReqs TEXT, Instructor TEXT, Description TEXT, StudentNum INTEGER )";
 
                 //execute each query
@@ -60,23 +60,55 @@ namespace Accredition_Assessment_Tracker.Handler
                 }
             }
         }
+
         //Debug functions
         public void ClearDB()   //remove all entries from tables, result is DB with 3 empty tables
         {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                string insertQuery = "DROP TABLE IF EXISTS Assessments";    //drops each table
 
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+                insertQuery = "DROP TABLE IF EXISTS Programs";
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+                insertQuery = "DROP TABLE IF EXISTS Courses";
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            initDB();   //reinitialized db to empty state
         }
         public void ClearAsmnt() //clear assessment table
         {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
 
+            }
         }
         public void ClearProg() //clear prog table
         {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
 
+            }
         }
         public void ClearCourse() //clear crs table
         {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
 
+            }
         }
+
         //Assesment Functions
         public void AddAssesment(string name, string type, string date)
         {
@@ -99,13 +131,19 @@ namespace Accredition_Assessment_Tracker.Handler
         //Program Functions
         public void AddProgram()
         {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
 
+            }
         }
 
         //Course Functions
         public void AddCourse()
         {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
 
+            }
         }
     }
 }
