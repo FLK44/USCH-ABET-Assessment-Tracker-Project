@@ -22,6 +22,7 @@ namespace Accredition_Assessment_Tracker
         {
             Database db = new Database();
             db.initDB();
+            db.AddAssesment("a", "b", "c");
             Dashboard dashboard = new Dashboard();
             dashboard.StartPosition = FormStartPosition.CenterScreen;
             dashboard.Show();
