@@ -41,8 +41,8 @@ namespace Accredition_Assessment_Tracker.Handler
                 string createAssmntTable = @"CREATE TABLE IF NOT EXISTS Assessments ( Id INTEGER PRIMARY KEY AUTOINCREMENT, AsmntName TEXT, AsmntType TEXT NOT NULL, AsmntDate TEXT NOT NULL )";
                 string createProgTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, ProgName TEXT UNIQUE NOT NULL, Facilities TEXT," +
                                                                                          " Faculty TEXT, Curriculum TEXT, StudentNum INTEGER, Outcomes TEXT )";
-                string createCrsTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, "+
-                                                                                         "PreReqs TEXT, Instructor TEXT, Description TEXT, StudentNum INTEGER";
+                string createCrsTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
+                                                                                         "PreReqs TEXT, Instructor TEXT, Description TEXT, StudentNum INTEGER )";
 
                 //execute each query
                 connection.Open();
@@ -59,11 +59,11 @@ namespace Accredition_Assessment_Tracker.Handler
                     command.ExecuteNonQuery();
                 }
             }
-        }  
+        }
         //Debug functions
         public void ClearDB()   //remove all entries from tables, result is DB with 3 empty tables
         {
-            
+
         }
         public void ClearAsmnt() //clear assessment table
         {
@@ -78,8 +78,21 @@ namespace Accredition_Assessment_Tracker.Handler
 
         }
         //Assesment Functions
-        public void AddAssesment()
+        public void AddAssesment(string name, string type, string date)
         {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                string insertQuery = @"INSERT INTO Assessments (AsmntName, AsmntType, AsmntDate) VALUES(@Name, @Type, @Date);";
+
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Type", type);
+                    command.Parameters.AddWithValue("@Date", date);
+                    command.ExecuteNonQuery();
+                }
+            }
 
         }
 
