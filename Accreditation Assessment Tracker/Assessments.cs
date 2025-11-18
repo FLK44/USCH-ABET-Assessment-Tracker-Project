@@ -25,5 +25,14 @@ namespace Accredition_Assessment_Tracker
             dashboard.Show();
             this.Hide();
         }
+
+        private void addNewAssementBtn_Click(object sender, EventArgs e)
+        {
+            string asmntName = "";
+            string asmntType = "";
+            string asmntDate = "";
+            //Database db = new Database();
+            //db.AddAssesment(asmntName, asmntType, asmntDate);
+        }
     }
 }
