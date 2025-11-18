@@ -34,27 +34,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.crsNameBox = new System.Windows.Forms.TextBox();
+            this.crsCodeBox = new System.Windows.Forms.TextBox();
+            this.preReqBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.instNameBox = new System.Windows.Forms.TextBox();
+            this.crsDescBox = new System.Windows.Forms.TextBox();
+            this.submitBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.stdNumBox = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.crdHrsBox = new System.Windows.Forms.NumericUpDown();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stdNumBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crdHrsBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Backbtn
@@ -108,33 +109,26 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Pre-reqs:";
             // 
-            // textBox1
+            // crsNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 20);
-            this.textBox1.TabIndex = 5;
+            this.crsNameBox.Location = new System.Drawing.Point(115, 19);
+            this.crsNameBox.Name = "crsNameBox";
+            this.crsNameBox.Size = new System.Drawing.Size(196, 20);
+            this.crsNameBox.TabIndex = 5;
             // 
-            // textBox2
+            // crsCodeBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 20);
-            this.textBox2.TabIndex = 6;
+            this.crsCodeBox.Location = new System.Drawing.Point(115, 55);
+            this.crsCodeBox.Name = "crsCodeBox";
+            this.crsCodeBox.Size = new System.Drawing.Size(196, 20);
+            this.crsCodeBox.TabIndex = 6;
             // 
-            // textBox3
+            // preReqBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 90);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 20);
-            this.textBox3.TabIndex = 7;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(91, 120);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(196, 20);
-            this.textBox4.TabIndex = 8;
+            this.preReqBox.Location = new System.Drawing.Point(91, 120);
+            this.preReqBox.Name = "preReqBox";
+            this.preReqBox.Size = new System.Drawing.Size(196, 20);
+            this.preReqBox.TabIndex = 8;
             // 
             // label5
             // 
@@ -165,30 +159,31 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Course description:";
             // 
-            // textBox5
+            // instNameBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(145, 187);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(196, 20);
-            this.textBox5.TabIndex = 13;
+            this.instNameBox.Location = new System.Drawing.Point(145, 187);
+            this.instNameBox.Name = "instNameBox";
+            this.instNameBox.Size = new System.Drawing.Size(196, 20);
+            this.instNameBox.TabIndex = 13;
             // 
-            // textBox7
+            // crsDescBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(163, 232);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(224, 101);
-            this.textBox7.TabIndex = 15;
+            this.crsDescBox.Location = new System.Drawing.Point(163, 232);
+            this.crsDescBox.Multiline = true;
+            this.crsDescBox.Name = "crsDescBox";
+            this.crsDescBox.Size = new System.Drawing.Size(224, 101);
+            this.crsDescBox.TabIndex = 15;
             // 
-            // button1
+            // submitBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(241, 594);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 31);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.Location = new System.Drawing.Point(241, 594);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.Size = new System.Drawing.Size(146, 31);
+            this.submitBtn.TabIndex = 16;
+            this.submitBtn.Text = "Submit";
+            this.submitBtn.UseVisualStyleBackColor = true;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // groupBox1
             // 
@@ -197,7 +192,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.stdNumBox);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Location = new System.Drawing.Point(16, 383);
@@ -206,46 +201,12 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
-            // textBox9
+            // stdNumBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(270, 94);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(55, 20);
-            this.textBox9.TabIndex = 18;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(126, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(143, 16);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Computer Engineering:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(125, 64);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 16);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Computer Science:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(244, 62);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(55, 20);
-            this.textBox8.TabIndex = 15;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(244, 19);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(70, 20);
-            this.numericUpDown1.TabIndex = 14;
+            this.stdNumBox.Location = new System.Drawing.Point(244, 19);
+            this.stdNumBox.Name = "stdNumBox";
+            this.stdNumBox.Size = new System.Drawing.Size(70, 20);
+            this.stdNumBox.TabIndex = 14;
             // 
             // label11
             // 
@@ -277,23 +238,64 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Enrollment";
             // 
+            // crdHrsBox
+            // 
+            this.crdHrsBox.Location = new System.Drawing.Point(120, 94);
+            this.crdHrsBox.Name = "crdHrsBox";
+            this.crdHrsBox.Size = new System.Drawing.Size(36, 20);
+            this.crdHrsBox.TabIndex = 19;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(244, 62);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(55, 20);
+            this.textBox8.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(125, 64);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(120, 16);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Computer Science:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(126, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(143, 16);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Computer Engineering:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(270, 94);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(55, 20);
+            this.textBox9.TabIndex = 18;
+            // 
             // Courses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 650);
+            this.Controls.Add(this.crdHrsBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.submitBtn);
+            this.Controls.Add(this.crsDescBox);
+            this.Controls.Add(this.instNameBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.preReqBox);
+            this.Controls.Add(this.crsCodeBox);
+            this.Controls.Add(this.crsNameBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -303,7 +305,8 @@
             this.Text = "Courses";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stdNumBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crdHrsBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,24 +319,24 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox crsNameBox;
+        private System.Windows.Forms.TextBox crsCodeBox;
+        private System.Windows.Forms.TextBox preReqBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox instNameBox;
+        private System.Windows.Forms.TextBox crsDescBox;
+        private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown stdNumBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown crdHrsBox;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
     }
 }

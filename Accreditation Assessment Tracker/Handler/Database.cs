@@ -125,7 +125,7 @@ namespace Accredition_Assessment_Tracker.Handler
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-                string insertQuery = @"INSERT INTO Assessments (AsmntName, AsmntType, AsmntDate) VALUES(@Name, @Type, @Date);";
+                string insertQuery = @"INSERT INTO Assessments (AsmntName, AsmntType, AsmntDate) VALUES(@Name, @Type, @Date);"; //insertion query
 
                 connection.Open();
                 using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
@@ -160,7 +160,7 @@ namespace Accredition_Assessment_Tracker.Handler
             }
         }
 
-        public string PopulatePrograms()
+        public string PopulatePrograms()    //pulls program table info from the db
         {
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
@@ -170,12 +170,24 @@ namespace Accredition_Assessment_Tracker.Handler
         }
 
         //Course Functions
-        public void AddCourse()
+        public void AddCourse(string crsName, string code, int hrs, string preReq, string instrName, string desc, int stdNum)
         {
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-
+                string insertQuery = @"INSERT INTO Courses(CourseName, Code, Hours, PreReqs, Instructor, Description, StudentNum) VALUES(@crsName, @code, @hrs, @preReq, @instrName, @desc, @stdNum)";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@crsName", crsName);
+                    command.Parameters.AddWithValue("@code", code);
+                    command.Parameters.AddWithValue("@hrs", hrs);
+                    command.Parameters.AddWithValue("@preReq", preReq);
+                    command.Parameters.AddWithValue("@instrName", instrName);
+                    command.Parameters.AddWithValue("@desc", desc);
+                    command.Parameters.AddWithValue("@stdNum",stdNum);
+                    command.ExecuteNonQuery();
+                }
             }
         }
     }
