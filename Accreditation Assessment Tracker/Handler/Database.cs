@@ -13,7 +13,7 @@ namespace Accredition_Assessment_Tracker.Handler
     {
         string pathtodb;    //dir and filename to db
         string connectionStr;   //holds path to DB for SQLite
-        public void initDB()    //creates the DB
+        private string getConnStr() //creates folder path and returns the connection string needed for sqlite functions
         {
             string dirName = "Database";    //folder name
             string fileName = "Tracker.db"; //name of the DB
@@ -24,7 +24,13 @@ namespace Accredition_Assessment_Tracker.Handler
             }
             pathtodb = Path.Combine(dirName, fileName);
             connectionStr = $"Data Source={pathtodb};"; //actual path is ..bin/debug/Database/Tracker.db
+            return connectionStr;
+        }
 
+        public void initDB()    //creates the DB
+        {
+
+            connectionStr = getConnStr();   //get connectionStr call
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
                 connection.Open();
@@ -64,6 +70,7 @@ namespace Accredition_Assessment_Tracker.Handler
         //Debug functions
         public void ClearDB()   //remove all entries from tables, result is DB with 3 empty tables
         {
+            connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
                 string insertQuery = "DROP TABLE IF EXISTS Assessments";    //drops each table
@@ -89,6 +96,7 @@ namespace Accredition_Assessment_Tracker.Handler
         }
         public void ClearAsmnt() //clear assessment table
         {
+            connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
 
@@ -96,6 +104,7 @@ namespace Accredition_Assessment_Tracker.Handler
         }
         public void ClearProg() //clear prog table
         {
+            connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
 
@@ -103,6 +112,7 @@ namespace Accredition_Assessment_Tracker.Handler
         }
         public void ClearCourse() //clear crs table
         {
+            connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
 
@@ -112,6 +122,7 @@ namespace Accredition_Assessment_Tracker.Handler
         //Assesment Functions
         public void AddAssesment(string name, string type, string date)
         {
+            connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
                 string insertQuery = @"INSERT INTO Assessments (AsmntName, AsmntType, AsmntDate) VALUES(@Name, @Type, @Date);";
@@ -129,17 +140,39 @@ namespace Accredition_Assessment_Tracker.Handler
         }
 
         //Program Functions
-        public void AddProgram()
+        public void AddProgram(string progName, string facil, string facul, string curr, int stnNum, string outcm)  //adds a program to the program table in db
         {
+            connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
+                string insertQuery = @"INSERT INTO Programs (ProgName, Facilities, Faculty, Curriculum, StudentNum, Outcomes) VALUES(@progName, @facil, @facul, @curr, @stnNum, @outcm)";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@progName", progName);
+                    command.Parameters.AddWithValue("@facil", facil);
+                    command.Parameters.AddWithValue("@facul", facul);
+                    command.Parameters.AddWithValue("@stnNum", stnNum);
+                    command.Parameters.AddWithValue("@curr", curr);
+                    command.Parameters.AddWithValue("@outcm", outcm);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
+        public string PopulatePrograms()
+        {
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                return "";
             }
         }
 
         //Course Functions
         public void AddCourse()
         {
+            connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
 

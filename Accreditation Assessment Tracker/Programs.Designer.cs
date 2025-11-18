@@ -1,4 +1,5 @@
-﻿namespace Accredition_Assessment_Tracker
+﻿using System.Windows.Forms;
+namespace Accredition_Assessment_Tracker
 {
     partial class Programs
     {
@@ -33,6 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,21 +47,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facilitiesTextBox = new System.Windows.Forms.TextBox();
+            this.facultyTextBox = new System.Windows.Forms.TextBox();
+            this.currTextBox = new System.Windows.Forms.TextBox();
+            this.numSudentsBox = new System.Windows.Forms.NumericUpDown();
+            this.outcomesTextBox = new System.Windows.Forms.TextBox();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.addCourseButton = new System.Windows.Forms.Button();
+            this.programDrpDwnBox = new System.Windows.Forms.ComboBox();
+            this.addProgramButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSudentsBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Backbtn
@@ -102,6 +104,31 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 199);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Course Name";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Course Code";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Credit Hours";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Pre-reqs";
+            this.Column5.Name = "Column5";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Instructor Name";
+            this.Column3.Name = "Column3";
             // 
             // label5
             // 
@@ -181,111 +208,101 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "Students Outcomes:";
             // 
-            // textBox2
+            // facilitiesTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(92, 325);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 20);
-            this.textBox2.TabIndex = 18;
+            this.facilitiesTextBox.Location = new System.Drawing.Point(92, 325);
+            this.facilitiesTextBox.Name = "facilitiesTextBox";
+            this.facilitiesTextBox.Size = new System.Drawing.Size(248, 20);
+            this.facilitiesTextBox.TabIndex = 18;
             // 
-            // textBox3
+            // facultyTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(92, 356);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(248, 20);
-            this.textBox3.TabIndex = 19;
+            this.facultyTextBox.Location = new System.Drawing.Point(92, 356);
+            this.facultyTextBox.Name = "facultyTextBox";
+            this.facultyTextBox.Size = new System.Drawing.Size(248, 20);
+            this.facultyTextBox.TabIndex = 19;
             // 
-            // textBox4
+            // currTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 388);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(248, 20);
-            this.textBox4.TabIndex = 20;
+            this.currTextBox.Location = new System.Drawing.Point(106, 388);
+            this.currTextBox.Name = "currTextBox";
+            this.currTextBox.Size = new System.Drawing.Size(248, 20);
+            this.currTextBox.TabIndex = 20;
             // 
-            // numericUpDown1
+            // numSudentsBox
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(174, 419);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(86, 20);
-            this.numericUpDown1.TabIndex = 21;
+            this.numSudentsBox.Location = new System.Drawing.Point(174, 419);
+            this.numSudentsBox.Name = "numSudentsBox";
+            this.numSudentsBox.Size = new System.Drawing.Size(86, 20);
+            this.numSudentsBox.TabIndex = 21;
             // 
-            // textBox5
+            // outcomesTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(173, 450);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(282, 113);
-            this.textBox5.TabIndex = 22;
+            this.outcomesTextBox.Location = new System.Drawing.Point(173, 450);
+            this.outcomesTextBox.Multiline = true;
+            this.outcomesTextBox.Name = "outcomesTextBox";
+            this.outcomesTextBox.Size = new System.Drawing.Size(282, 113);
+            this.outcomesTextBox.TabIndex = 22;
             // 
-            // button1
+            // submitButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(271, 595);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 33);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitButton.Location = new System.Drawing.Point(271, 595);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(89, 33);
+            this.submitButton.TabIndex = 23;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // button2
+            // addCourseButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(662, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 32);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Add New...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addCourseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCourseButton.Location = new System.Drawing.Point(662, 53);
+            this.addCourseButton.Name = "addCourseButton";
+            this.addCourseButton.Size = new System.Drawing.Size(123, 32);
+            this.addCourseButton.TabIndex = 24;
+            this.addCourseButton.Text = "Add New...";
+            this.addCourseButton.UseVisualStyleBackColor = true;
+            this.addCourseButton.Click += new System.EventHandler(this.addCourseButton_Click);
             // 
-            // comboBox1
+            // programDrpDwnBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.programDrpDwnBox.FormattingEnabled = true;
+            this.programDrpDwnBox.Items.AddRange(new object[] {
             "Computer Science",
             "Computer Engineering"});
-            this.comboBox1.Location = new System.Drawing.Point(91, 8);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 21);
-            this.comboBox1.TabIndex = 25;
+            this.programDrpDwnBox.Location = new System.Drawing.Point(91, 8);
+            this.programDrpDwnBox.Name = "programDrpDwnBox";
+            this.programDrpDwnBox.Size = new System.Drawing.Size(143, 21);
+            this.programDrpDwnBox.TabIndex = 25;
+            this.programDrpDwnBox.SelectedIndexChanged += new System.EventHandler(this.programDrpDwnBox_SelectedIndexChanged);
             // 
-            // Column1
+            // addProgramButton
             // 
-            this.Column1.HeaderText = "Course Name";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Course Code";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Credit Hours";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Pre-reqs";
-            this.Column5.Name = "Column5";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Instructor Name";
-            this.Column3.Name = "Column3";
+            this.addProgramButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addProgramButton.Location = new System.Drawing.Point(240, 4);
+            this.addProgramButton.Name = "addProgramButton";
+            this.addProgramButton.Size = new System.Drawing.Size(123, 32);
+            this.addProgramButton.TabIndex = 26;
+            this.addProgramButton.Text = "Add New...";
+            this.addProgramButton.UseVisualStyleBackColor = true;
+            this.addProgramButton.Click += new System.EventHandler(this.addProgramButton_Click);
             // 
             // Programs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 654);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.addProgramButton);
+            this.Controls.Add(this.programDrpDwnBox);
+            this.Controls.Add(this.addCourseButton);
+            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.outcomesTextBox);
+            this.Controls.Add(this.numSudentsBox);
+            this.Controls.Add(this.currTextBox);
+            this.Controls.Add(this.facultyTextBox);
+            this.Controls.Add(this.facilitiesTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -301,7 +318,7 @@
             this.Name = "Programs";
             this.Text = "Programs";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSudentsBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,18 +338,19 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox facilitiesTextBox;
+        private System.Windows.Forms.TextBox facultyTextBox;
+        private System.Windows.Forms.TextBox currTextBox;
+        private System.Windows.Forms.NumericUpDown numSudentsBox;
+        private System.Windows.Forms.TextBox outcomesTextBox;
+        private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Button addCourseButton;
+        private System.Windows.Forms.ComboBox programDrpDwnBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button addProgramButton;
     }
 }
