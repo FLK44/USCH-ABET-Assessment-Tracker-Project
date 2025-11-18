@@ -34,8 +34,6 @@ namespace Accredition_Assessment_Tracker
 
         private void addProgramButton_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
-            //db.AddProgram();
             string progName = programDrpDwnBox.Text;
             //Console.WriteLine(input);
             programDrpDwnBox.Items.Add(progName);
