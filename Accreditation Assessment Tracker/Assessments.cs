@@ -20,13 +20,19 @@ namespace Accredition_Assessment_Tracker
 
         private void Backbtn_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
-            db.initDB();
-            db.AddAssesment("a", "b", "c");
             Dashboard dashboard = new Dashboard();
             dashboard.StartPosition = FormStartPosition.CenterScreen;
             dashboard.Show();
             this.Hide();
+        }
+
+        private void addNewAssementBtn_Click(object sender, EventArgs e)
+        {
+            string asmntName = "";
+            string asmntType = "";
+            string asmntDate = "";
+            //Database db = new Database();
+            //db.AddAssesment(asmntName, asmntType, asmntDate);
         }
     }
 }

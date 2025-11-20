@@ -13,7 +13,7 @@ namespace Accredition_Assessment_Tracker.Handler
     {
         string pathtodb;    //dir and filename to db
         string connectionStr;   //holds path to DB for SQLite
-        public void initDB()    //creates the DB
+        private string getConnStr() //creates folder path and returns the connection string needed for sqlite functions
         {
             string dirName = "Database";    //folder name
             string fileName = "Tracker.db"; //name of the DB
@@ -24,7 +24,13 @@ namespace Accredition_Assessment_Tracker.Handler
             }
             pathtodb = Path.Combine(dirName, fileName);
             connectionStr = $"Data Source={pathtodb};"; //actual path is ..bin/debug/Database/Tracker.db
+            return connectionStr;
+        }
 
+        public void initDB()    //creates the DB
+        {
+
+            connectionStr = getConnStr();   //get connectionStr call
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
                 connection.Open();
@@ -41,7 +47,7 @@ namespace Accredition_Assessment_Tracker.Handler
                 string createAssmntTable = @"CREATE TABLE IF NOT EXISTS Assessments ( Id INTEGER PRIMARY KEY AUTOINCREMENT, AsmntName TEXT, AsmntType TEXT NOT NULL, AsmntDate TEXT NOT NULL )";
                 string createProgTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, ProgName TEXT UNIQUE NOT NULL, Facilities TEXT," +
                                                                                          " Faculty TEXT, Curriculum TEXT, StudentNum INTEGER, Outcomes TEXT )";
-                string createCrsTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
+                string createCrsTable = @"CREATE TABLE IF NOT EXISTS Courses ( Id INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
                                                                                          "PreReqs TEXT, Instructor TEXT, Description TEXT, StudentNum INTEGER )";
 
                 //execute each query
@@ -60,29 +66,66 @@ namespace Accredition_Assessment_Tracker.Handler
                 }
             }
         }
+
         //Debug functions
         public void ClearDB()   //remove all entries from tables, result is DB with 3 empty tables
         {
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                string insertQuery = "DROP TABLE IF EXISTS Assessments";    //drops each table
 
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+                insertQuery = "DROP TABLE IF EXISTS Programs";
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+                insertQuery = "DROP TABLE IF EXISTS Courses";
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            initDB();   //reinitialized db to empty state
         }
         public void ClearAsmnt() //clear assessment table
         {
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
 
+            }
         }
         public void ClearProg() //clear prog table
         {
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
 
+            }
         }
         public void ClearCourse() //clear crs table
         {
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
 
+            }
         }
+
         //Assesment Functions
         public void AddAssesment(string name, string type, string date)
         {
+            connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-                string insertQuery = @"INSERT INTO Assessments (AsmntName, AsmntType, AsmntDate) VALUES(@Name, @Type, @Date);";
+                string insertQuery = @"INSERT INTO Assessments (AsmntName, AsmntType, AsmntDate) VALUES(@Name, @Type, @Date);"; //insertion query
 
                 connection.Open();
                 using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
@@ -97,15 +140,55 @@ namespace Accredition_Assessment_Tracker.Handler
         }
 
         //Program Functions
-        public void AddProgram()
+        public void AddProgram(string progName, string facil, string facul, string curr, int stnNum, string outcm)  //adds a program to the program table in db
         {
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                string insertQuery = @"INSERT INTO Programs (ProgName, Facilities, Faculty, Curriculum, StudentNum, Outcomes) VALUES(@progName, @facil, @facul, @curr, @stnNum, @outcm)";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@progName", progName);
+                    command.Parameters.AddWithValue("@facil", facil);
+                    command.Parameters.AddWithValue("@facul", facul);
+                    command.Parameters.AddWithValue("@stnNum", stnNum);
+                    command.Parameters.AddWithValue("@curr", curr);
+                    command.Parameters.AddWithValue("@outcm", outcm);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
+        public string PopulatePrograms()    //pulls program table info from the db
+        {
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                return "";
+            }
         }
 
         //Course Functions
-        public void AddCourse()
+        public void AddCourse(string crsName, string code, int hrs, string preReq, string instrName, string desc, int stdNum)
         {
-
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                string insertQuery = @"INSERT INTO Courses(CourseName, Code, Hours, PreReqs, Instructor, Description, StudentNum) VALUES(@crsName, @code, @hrs, @preReq, @instrName, @desc, @stdNum)";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@crsName", crsName);
+                    command.Parameters.AddWithValue("@code", code);
+                    command.Parameters.AddWithValue("@hrs", hrs);
+                    command.Parameters.AddWithValue("@preReq", preReq);
+                    command.Parameters.AddWithValue("@instrName", instrName);
+                    command.Parameters.AddWithValue("@desc", desc);
+                    command.Parameters.AddWithValue("@stdNum",stdNum);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
