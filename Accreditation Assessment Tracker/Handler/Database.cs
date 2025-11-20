@@ -178,14 +178,35 @@ namespace Accredition_Assessment_Tracker.Handler
             }
         }
 
-        public string PopulatePrograms()    //pulls program table info from the db
+        public string[] PopulatePrograms(int index)    //pulls program table info from the db
         {
             connectionStr = getConnStr();
+            string[] output = new string[7];
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-                string readQuery = @"";
-                return "";
+                string readQuery = @"SELECT * FROM Programs WHERE Id = @Id";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(readQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", index);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            output[0] = reader["Id"].ToString();
+                            output[1] = reader["ProgName"].ToString();
+                            output[2] = reader["Facilities"].ToString();
+                            output[3] = reader["Faculty"].ToString();
+                            output[4] = reader["Curriculum"].ToString();
+                            output[5] = reader["StudentNum"].ToString();
+                            output[6] = reader["Outcomes"].ToString();
+                            return output;
+                        }
+                    }
+                }
             }
+            output[0] = "empty";
+            return output;
         }
 
         //Course Functions
@@ -206,6 +227,21 @@ namespace Accredition_Assessment_Tracker.Handler
                     command.Parameters.AddWithValue("@desc", desc);
                     command.Parameters.AddWithValue("@stdNum",stdNum);
                     command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        //Helper funcitons
+        public int countEntries(string table)
+        {
+            connectionStr = getConnStr();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                string readQuery = $"SELECT COUNT(*) FROM {table}";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(readQuery, connection))
+                {
+                    return Convert.ToInt32(command.ExecuteScalar());
                 }
             }
         }

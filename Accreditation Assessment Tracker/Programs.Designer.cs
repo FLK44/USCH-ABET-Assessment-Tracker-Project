@@ -269,9 +269,6 @@ namespace Accredition_Assessment_Tracker
             // programDrpDwnBox
             // 
             this.programDrpDwnBox.FormattingEnabled = true;
-            this.programDrpDwnBox.Items.AddRange(new object[] {
-            "Computer Science",
-            "Computer Engineering"});
             this.programDrpDwnBox.Location = new System.Drawing.Point(91, 8);
             this.programDrpDwnBox.Name = "programDrpDwnBox";
             this.programDrpDwnBox.Size = new System.Drawing.Size(143, 21);

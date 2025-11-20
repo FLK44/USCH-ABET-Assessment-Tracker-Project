@@ -16,8 +16,30 @@ namespace Accredition_Assessment_Tracker
         public Programs()
         {
             InitializeComponent();
-        }
+            Database db = new Database();
+            int entryCount = 0;
+            string[] programEntry;
+            entryCount = db.countEntries("Programs");
+            //Console.WriteLine(entryCount.ToString());
+            for (int i = 1; i < entryCount + 1; i++)    //adds all program names from table to dropdown box on start
+            {
+                programEntry = db.PopulatePrograms(i);
+                programDrpDwnBox.Items.Add(programEntry[1]);
+                //Console.WriteLine(programEntry[1]);
+            }
 
+        }
+        private void fillPageValues(int index)  //fills the page with table values at ID# of index
+        {
+            Database db = new Database();
+            string[] programEntry = db.PopulatePrograms(index);
+            programDrpDwnBox.Text = programEntry[1];    //prog name
+            facilitiesTextBox.Text = programEntry[2];   //facilities
+            facultyTextBox.Text = programEntry[3];      //faculty
+            currTextBox.Text = programEntry[4];         //curriculum
+            numSudentsBox.Value = Convert.ToInt32(programEntry[5]); //num of students
+            outcomesTextBox.Text = programEntry[6];     //outcomes
+        }
         private void Backbtn_Click(object sender, EventArgs e)
         {
             Dashboard dashboard = new Dashboard();
@@ -29,7 +51,7 @@ namespace Accredition_Assessment_Tracker
 
         private void programDrpDwnBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            fillPageValues(programDrpDwnBox.SelectedIndex + 1);
         }
 
         private void addProgramButton_Click(object sender, EventArgs e)
