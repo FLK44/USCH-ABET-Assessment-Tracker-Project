@@ -48,5 +48,13 @@ namespace Accredition_Assessment_Tracker
             rowsAff = db.ClearAsmnt();
             Console.WriteLine($"Rows affected: {rowsAff}");
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.StartPosition = FormStartPosition.CenterScreen;
+            dashboard.Show();
+            this.Hide();
+        }
     }
 }
