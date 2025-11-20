@@ -32,6 +32,7 @@
             this.GoToCoursesbtn = new System.Windows.Forms.Button();
             this.GoToAssessmentsbtn = new System.Windows.Forms.Button();
             this.GoToProgramsbtn = new System.Windows.Forms.Button();
+            this.settingBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,11 +78,22 @@
             this.GoToProgramsbtn.UseVisualStyleBackColor = true;
             this.GoToProgramsbtn.Click += new System.EventHandler(this.GoToProgramsbtn_Click);
             // 
+            // settingBtn
+            // 
+            this.settingBtn.Location = new System.Drawing.Point(247, 247);
+            this.settingBtn.Name = "settingBtn";
+            this.settingBtn.Size = new System.Drawing.Size(75, 23);
+            this.settingBtn.TabIndex = 5;
+            this.settingBtn.Text = "Settings";
+            this.settingBtn.UseVisualStyleBackColor = true;
+            this.settingBtn.Click += new System.EventHandler(this.settingBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 282);
+            this.Controls.Add(this.settingBtn);
             this.Controls.Add(this.GoToProgramsbtn);
             this.Controls.Add(this.GoToAssessmentsbtn);
             this.Controls.Add(this.GoToCoursesbtn);
@@ -100,6 +112,7 @@
         private System.Windows.Forms.Button GoToCoursesbtn;
         private System.Windows.Forms.Button GoToAssessmentsbtn;
         private System.Windows.Forms.Button GoToProgramsbtn;
+        private System.Windows.Forms.Button settingBtn;
     }
 }
 

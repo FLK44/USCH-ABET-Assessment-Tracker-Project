@@ -16,7 +16,7 @@ namespace Accredition_Assessment_Tracker.Handler
         private string getConnStr() //creates folder path and returns the connection string needed for sqlite functions
         {
             string dirName = "Database";    //folder name
-            string fileName = "Tracker.db"; //name of the DB
+            string fileName = "Tracker.db"; //name of the DB file
 
             if (!Directory.Exists(dirName)) //checks if the database folder exists, if not create it
             {
@@ -27,7 +27,7 @@ namespace Accredition_Assessment_Tracker.Handler
             return connectionStr;
         }
 
-        public void initDB()    //creates the DB
+        public void initDB()
         {
 
             connectionStr = getConnStr();   //get connectionStr call
@@ -94,28 +94,46 @@ namespace Accredition_Assessment_Tracker.Handler
 
             initDB();   //reinitialized db to empty state
         }
-        public void ClearAsmnt() //clear assessment table
+        public int ClearAsmnt() //clear assessment table
         {
+            int rowsAff = 0;
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-
+                string delQuery = @"DELETE FROM Assessments";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(delQuery, connection))
+                {
+                    return rowsAff = command.ExecuteNonQuery();
+                }
             }
         }
-        public void ClearProg() //clear prog table
+        public int ClearProg() //clear prog table
         {
+            int rowsAff = 0;
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-
+                string delQuery = @"DELETE FROM Programs";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(delQuery, connection))
+                {
+                    return rowsAff = command.ExecuteNonQuery();
+                }
             }
         }
-        public void ClearCourse() //clear crs table
+        public int ClearCourse() //clear crs table
         {
+            int rowsAff = 0;
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-
+                string delQuery = @"DELETE FROM Courses";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(delQuery, connection))
+                {
+                    return rowsAff = command.ExecuteNonQuery();
+                }
             }
         }
 
@@ -165,6 +183,7 @@ namespace Accredition_Assessment_Tracker.Handler
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
+                string readQuery = @"";
                 return "";
             }
         }

@@ -46,5 +46,13 @@ namespace Accredition_Assessment_Tracker
             programs.Show();
             this.Hide();
         }
+
+        private void settingBtn_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.StartPosition = FormStartPosition.CenterScreen;
+            settings.Show();
+            this.Hide();
+        }
     }
 }
