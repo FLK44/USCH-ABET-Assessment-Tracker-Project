@@ -283,6 +283,7 @@
             // 
             // progIDDrpDwnBox
             // 
+            this.progIDDrpDwnBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.progIDDrpDwnBox.FormattingEnabled = true;
             this.progIDDrpDwnBox.Location = new System.Drawing.Point(137, 8);
             this.progIDDrpDwnBox.Name = "progIDDrpDwnBox";
