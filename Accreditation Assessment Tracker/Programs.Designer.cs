@@ -232,6 +232,11 @@ namespace Accredition_Assessment_Tracker
             // numSudentsBox
             // 
             this.numSudentsBox.Location = new System.Drawing.Point(174, 419);
+            this.numSudentsBox.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numSudentsBox.Name = "numSudentsBox";
             this.numSudentsBox.Size = new System.Drawing.Size(86, 20);
             this.numSudentsBox.TabIndex = 21;

@@ -94,6 +94,17 @@ namespace Accredition_Assessment_Tracker.Handler
 
             initDB();   //reinitialized db to empty state
         }
+        public void TestFillDB()    //fills DB with test values
+        {
+            Database db = new Database();
+            db.ClearDB();
+            for (int i = 0; i < 10; i++)
+            {
+                db.AddAssesment($"TestNM{i}", "Quiz", $"11/1{i}/2000");
+                db.AddCourse($"Test Course 11{i}", $"TST-11{i}", 3, $"TST-10{i}", "Dr. Saul Realman", $"Descriptive test text{i}", 30 + i);
+                db.AddProgram($"Program Name{i}", $"Lab 11{i}", $"Instructors: {i}", $"linkToACurr{i}", 1000 + i, $"Descriptive outcome text{i}");
+            }
+        }
         public int ClearAsmnt() //clear assessment table
         {
             int rowsAff = 0;

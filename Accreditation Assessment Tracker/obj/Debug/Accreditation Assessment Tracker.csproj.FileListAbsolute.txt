@@ -9,6 +9,7 @@ C:\Users\Narut\source\repos\USCH-ABET-Assessment-Tracker-Project\Accreditation A
 C:\Users\Narut\source\repos\USCH-ABET-Assessment-Tracker-Project\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Dashboard.resources
 C:\Users\Narut\source\repos\USCH-ABET-Assessment-Tracker-Project\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Programs.resources
 C:\Users\Narut\source\repos\USCH-ABET-Assessment-Tracker-Project\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Properties.Resources.resources
+C:\Users\Narut\source\repos\USCH-ABET-Assessment-Tracker-Project\Accreditation Assessment Tracker\obj\Debug\Accredition_Assessment_Tracker.Settings.resources
 C:\Users\Narut\source\repos\USCH-ABET-Assessment-Tracker-Project\Accreditation Assessment Tracker\obj\Debug\Accreditation Assessment Tracker.csproj.GenerateResource.cache
 C:\Users\Narut\source\repos\USCH-ABET-Assessment-Tracker-Project\Accreditation Assessment Tracker\obj\Debug\Accreditation Assessment Tracker.csproj.CoreCompileInputs.cache
 C:\Users\Narut\source\repos\USCH-ABET-Assessment-Tracker-Project\Accreditation Assessment Tracker\obj\Debug\Accredit.44926528.Up2Date
