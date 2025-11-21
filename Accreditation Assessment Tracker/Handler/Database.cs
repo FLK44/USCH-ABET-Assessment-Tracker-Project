@@ -115,7 +115,8 @@ namespace Accredition_Assessment_Tracker.Handler
                 connection.Open();
                 using (SQLiteCommand command = new SQLiteCommand(delQuery, connection))
                 {
-                    return rowsAff = command.ExecuteNonQuery();
+                    int rows = command.ExecuteNonQuery(); // number of rows deleted
+                    return rows;
                 }
             }
         }
