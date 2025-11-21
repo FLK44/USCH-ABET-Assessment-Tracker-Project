@@ -34,6 +34,7 @@
             this.delProgTabBtn = new System.Windows.Forms.Button();
             this.delAsmTabBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.fillDBBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // delDbBtn
@@ -93,7 +94,7 @@
             // backBtn
             // 
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.Location = new System.Drawing.Point(12, 276);
+            this.backBtn.Location = new System.Drawing.Point(12, 420);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(86, 39);
             this.backBtn.TabIndex = 5;
@@ -101,11 +102,23 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // fillDBBtn
+            // 
+            this.fillDBBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fillDBBtn.Location = new System.Drawing.Point(92, 261);
+            this.fillDBBtn.Name = "fillDBBtn";
+            this.fillDBBtn.Size = new System.Drawing.Size(172, 47);
+            this.fillDBBtn.TabIndex = 6;
+            this.fillDBBtn.Text = "Fill DB with Values";
+            this.fillDBBtn.UseVisualStyleBackColor = true;
+            this.fillDBBtn.Click += new System.EventHandler(this.fillDBBtn_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 327);
+            this.ClientSize = new System.Drawing.Size(343, 471);
+            this.Controls.Add(this.fillDBBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.delAsmTabBtn);
             this.Controls.Add(this.delProgTabBtn);
@@ -127,5 +140,6 @@
         private System.Windows.Forms.Button delProgTabBtn;
         private System.Windows.Forms.Button delAsmTabBtn;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button fillDBBtn;
     }
 }

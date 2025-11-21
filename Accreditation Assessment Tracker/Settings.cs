@@ -56,5 +56,11 @@ namespace Accredition_Assessment_Tracker
             dashboard.Show();
             this.Hide();
         }
+
+        private void fillDBBtn_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            db.TestFillDB();
+        }
     }
 }
