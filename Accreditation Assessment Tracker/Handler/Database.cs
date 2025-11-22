@@ -300,18 +300,5 @@ namespace Accredition_Assessment_Tracker.Handler
                 }
             }
         }
-        public int countCoursesInProg(int index)
-        {
-            connectionStr = getConnStr();
-            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
-            {
-                string readQuery = $"SELECT COUNT(*) FROM Courses WHERE ProgID = {index}";
-                connection.Open();
-                using (SQLiteCommand command = new SQLiteCommand(readQuery, connection))
-                {
-                    return Convert.ToInt32(command.ExecuteScalar());
-                }
-            }
-        }
     }
 }

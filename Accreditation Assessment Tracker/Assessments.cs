@@ -82,11 +82,10 @@ namespace Accredition_Assessment_Tracker
             crsIDDrpDwnBox.Items.Clear();
             List<string[]> courseEntry;
             Database db = new Database();
-            int entryCount = db.countCoursesInProg(progIDDrpDwnBox.SelectedIndex);  //counts how many courses match the progID
             courseEntry = db.PopulateCourses(progIDDrpDwnBox.SelectedIndex);    //returns a collection of string arrays each holding a row.  0-9 for each collumn
-            for (int i = 0; i < entryCount; i++) 
+            foreach (string[] item in courseEntry)
             {
-                crsIDDrpDwnBox.Items.Add(courseEntry[i][1]);    //1 is course name field
+                crsIDDrpDwnBox.Items.Add(item[1]);
             }
         }
     }
