@@ -32,13 +32,36 @@ namespace Accredition_Assessment_Tracker
         private void fillPageValues(int index)  //fills the page with table values at ID# of index
         {
             Database db = new Database();
-            string[] programEntry = db.PopulatePrograms(index);
+            string[] programEntry = db.PopulatePrograms(index + 1);
+            List<string[]> courseEntries = db.PopulateCourses(index);
             programDrpDwnBox.Text = programEntry[1];    //prog name
             facilitiesTextBox.Text = programEntry[2];   //facilities
             facultyTextBox.Text = programEntry[3];      //faculty
             currTextBox.Text = programEntry[4];         //curriculum
             numSudentsBox.Value = Convert.ToInt32(programEntry[5]); //num of students
             outcomesTextBox.Text = programEntry[6];     //outcomes
+
+            for (int i = 0; i < courseEntries.Count; i++)
+            {
+                //Console.WriteLine("--------------------------");
+                //Console.WriteLine(courseEntries[i][0]);
+                //Console.WriteLine(courseEntries[i][1]);
+                //Console.WriteLine(courseEntries[i][2]);
+                //Console.WriteLine(courseEntries[i][3]);
+                //Console.WriteLine(courseEntries[i][4]);
+                //Console.WriteLine(courseEntries[i][5]);
+                //Console.WriteLine(courseEntries[i][6]);
+                //Console.WriteLine(courseEntries[i][7]);
+                //Console.WriteLine(courseEntries[i][8]);
+                //Console.WriteLine("--------------------------");
+                int newRow = courseListGrid.Rows.Add();
+                courseListGrid.Rows[newRow].Cells[0].Value = courseEntries[i][1];
+                courseListGrid.Rows[newRow].Cells[1].Value = courseEntries[i][3];
+                courseListGrid.Rows[newRow].Cells[2].Value = courseEntries[i][4];
+                courseListGrid.Rows[newRow].Cells[3].Value = courseEntries[i][5];
+                courseListGrid.Rows[newRow].Cells[4].Value = courseEntries[i][6];
+                
+            }
         }
         private void Backbtn_Click(object sender, EventArgs e)
         {
@@ -51,7 +74,8 @@ namespace Accredition_Assessment_Tracker
 
         private void programDrpDwnBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            fillPageValues(programDrpDwnBox.SelectedIndex + 1);
+            courseListGrid.Rows.Clear();
+            fillPageValues(programDrpDwnBox.SelectedIndex);
         }
 
         private void addProgramButton_Click(object sender, EventArgs e)

@@ -85,7 +85,7 @@ namespace Accredition_Assessment_Tracker
             courseEntry = db.PopulateCourses(progIDDrpDwnBox.SelectedIndex);    //returns a collection of string arrays each holding a row.  0-9 for each collumn
             foreach (string[] item in courseEntry)
             {
-                crsIDDrpDwnBox.Items.Add(item[1]);
+                crsIDDrpDwnBox.Items.Add(item[2]);
             }
         }
     }

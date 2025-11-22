@@ -33,7 +33,7 @@ namespace Accredition_Assessment_Tracker
             this.Backbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.courseListGrid = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@ namespace Accredition_Assessment_Tracker
             this.addCourseButton = new System.Windows.Forms.Button();
             this.programDrpDwnBox = new System.Windows.Forms.ComboBox();
             this.addProgramButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSudentsBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,19 +91,19 @@ namespace Accredition_Assessment_Tracker
             this.label2.TabIndex = 3;
             this.label2.Text = "Course List:";
             // 
-            // dataGridView1
+            // courseListGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.courseListGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.courseListGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column4,
             this.Column5,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(106, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(545, 199);
-            this.dataGridView1.TabIndex = 5;
+            this.courseListGrid.Location = new System.Drawing.Point(106, 53);
+            this.courseListGrid.Name = "courseListGrid";
+            this.courseListGrid.Size = new System.Drawing.Size(545, 199);
+            this.courseListGrid.TabIndex = 5;
             // 
             // Column1
             // 
@@ -313,13 +313,13 @@ namespace Accredition_Assessment_Tracker
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.courseListGrid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Backbtn);
             this.Name = "Programs";
             this.Text = "Programs";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseListGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSudentsBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,7 +331,7 @@ namespace Accredition_Assessment_Tracker
         private System.Windows.Forms.Button Backbtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView courseListGrid;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

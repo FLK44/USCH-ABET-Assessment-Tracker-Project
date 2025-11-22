@@ -57,7 +57,7 @@ namespace Accredition_Assessment_Tracker.Handler
 
                 string createCrsTable = @"CREATE TABLE IF NOT EXISTS Courses ( Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                                          "ProgID INT NOT NULL, " +
-                                         "CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
+                                         "CourseName TEXT UNIQUE NOT NULL, Code TEXT UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
                                          "PreReqs TEXT, Instructor TEXT, Description TEXT, StudentNum INTEGER, " +
                                          "FOREIGN KEY (ProgID) REFERENCES Programs(Id) ON DELETE CASCADE )";
 
@@ -271,8 +271,8 @@ namespace Accredition_Assessment_Tracker.Handler
                         {
                             string[] entry = new string[9];
                             entry[0] = reader["Id"].ToString();
-                            entry[1] = reader["CourseName"].ToString();
-                            entry[2] = reader["ProgID"].ToString();
+                            entry[1] = reader["ProgID"].ToString();
+                            entry[2] = reader["CourseName"].ToString();
                             entry[3] = reader["Code"].ToString();
                             entry[4] = reader["Hours"].ToString();
                             entry[5] = reader["PreReqs"].ToString();
