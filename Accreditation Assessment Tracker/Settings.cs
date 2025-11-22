@@ -43,10 +43,13 @@ namespace Accredition_Assessment_Tracker
 
         private void delAsmTabBtn_Click(object sender, EventArgs e)
         {
-            int rowsAff;
             Database db = new Database();
-            rowsAff = db.ClearAsmnt();
-            Console.WriteLine($"Rows affected: {rowsAff}");
+            int rowsAff = db.ClearAsmnt();
+            MessageBox.Show(
+                $"Assessments table cleared.\nRows deleted: {rowsAff}",
+                "Clear Assessment Table",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -61,6 +64,11 @@ namespace Accredition_Assessment_Tracker
         {
             Database db = new Database();
             db.TestFillDB();
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
