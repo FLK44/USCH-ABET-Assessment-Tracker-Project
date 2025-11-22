@@ -55,7 +55,7 @@ namespace Accredition_Assessment_Tracker
                 //Console.WriteLine(courseEntries[i][8]);
                 //Console.WriteLine("--------------------------");
                 int newRow = courseListGrid.Rows.Add();
-                courseListGrid.Rows[newRow].Cells[0].Value = courseEntries[i][1];
+                courseListGrid.Rows[newRow].Cells[0].Value = courseEntries[i][2];
                 courseListGrid.Rows[newRow].Cells[1].Value = courseEntries[i][3];
                 courseListGrid.Rows[newRow].Cells[2].Value = courseEntries[i][4];
                 courseListGrid.Rows[newRow].Cells[3].Value = courseEntries[i][5];
