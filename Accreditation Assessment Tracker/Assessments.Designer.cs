@@ -32,15 +32,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.crsIDDrpDwnBox = new System.Windows.Forms.ComboBox();
+            this.progIDDrpDwnBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.assessmentGridView = new System.Windows.Forms.DataGridView();
-            this.addNewAssementBtn = new System.Windows.Forms.Button();
-            this.Savebtn = new System.Windows.Forms.Button();
             this.AssessmentTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssessmentNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssessmentDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addNewAssementBtn = new System.Windows.Forms.Button();
+            this.Savebtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.assessmentGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 55);
+            this.label2.Location = new System.Drawing.Point(32, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
             this.label2.TabIndex = 3;
@@ -79,31 +79,30 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 86);
+            this.label3.Location = new System.Drawing.Point(32, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Program:";
             // 
-            // comboBox1
+            // crsIDDrpDwnBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "EX 488"});
-            this.comboBox1.Location = new System.Drawing.Point(100, 54);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.crsIDDrpDwnBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.crsIDDrpDwnBox.FormattingEnabled = true;
+            this.crsIDDrpDwnBox.Location = new System.Drawing.Point(100, 86);
+            this.crsIDDrpDwnBox.Name = "crsIDDrpDwnBox";
+            this.crsIDDrpDwnBox.Size = new System.Drawing.Size(121, 21);
+            this.crsIDDrpDwnBox.TabIndex = 5;
             // 
-            // comboBox2
+            // progIDDrpDwnBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Computer Science"});
-            this.comboBox2.Location = new System.Drawing.Point(100, 85);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 6;
+            this.progIDDrpDwnBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.progIDDrpDwnBox.FormattingEnabled = true;
+            this.progIDDrpDwnBox.Location = new System.Drawing.Point(100, 59);
+            this.progIDDrpDwnBox.Name = "progIDDrpDwnBox";
+            this.progIDDrpDwnBox.Size = new System.Drawing.Size(121, 21);
+            this.progIDDrpDwnBox.TabIndex = 6;
+            this.progIDDrpDwnBox.SelectedIndexChanged += new System.EventHandler(this.progIDDrpDwnBox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -128,6 +127,21 @@
             this.assessmentGridView.Size = new System.Drawing.Size(346, 184);
             this.assessmentGridView.TabIndex = 8;
             // 
+            // AssessmentTypeColumn
+            // 
+            this.AssessmentTypeColumn.HeaderText = "Assessment Type";
+            this.AssessmentTypeColumn.Name = "AssessmentTypeColumn";
+            // 
+            // AssessmentNameColumn
+            // 
+            this.AssessmentNameColumn.HeaderText = "Assessment Name";
+            this.AssessmentNameColumn.Name = "AssessmentNameColumn";
+            // 
+            // AssessmentDateColumn
+            // 
+            this.AssessmentDateColumn.HeaderText = "Date";
+            this.AssessmentDateColumn.Name = "AssessmentDateColumn";
+            // 
             // addNewAssementBtn
             // 
             this.addNewAssementBtn.Location = new System.Drawing.Point(413, 162);
@@ -148,21 +162,6 @@
             this.Savebtn.UseVisualStyleBackColor = true;
             this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 
-            // AssessmentTypeColumn
-            // 
-            this.AssessmentTypeColumn.HeaderText = "Assessment Type";
-            this.AssessmentTypeColumn.Name = "AssessmentTypeColumn";
-            // 
-            // AssessmentNameColumn
-            // 
-            this.AssessmentNameColumn.HeaderText = "Assessment Name";
-            this.AssessmentNameColumn.Name = "AssessmentNameColumn";
-            // 
-            // AssessmentDateColumn
-            // 
-            this.AssessmentDateColumn.HeaderText = "Date";
-            this.AssessmentDateColumn.Name = "AssessmentDateColumn";
-            // 
             // Assessments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,8 +170,8 @@
             this.Controls.Add(this.Savebtn);
             this.Controls.Add(this.addNewAssementBtn);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.progIDDrpDwnBox);
+            this.Controls.Add(this.crsIDDrpDwnBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -193,8 +192,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox crsIDDrpDwnBox;
+        private System.Windows.Forms.ComboBox progIDDrpDwnBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView assessmentGridView;
         private System.Windows.Forms.Button addNewAssementBtn;

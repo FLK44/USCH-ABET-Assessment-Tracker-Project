@@ -57,7 +57,7 @@ namespace Accredition_Assessment_Tracker.Handler
 
                 string createCrsTable = @"CREATE TABLE IF NOT EXISTS Courses ( Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                                          "ProgID INT NOT NULL, " +
-                                         "CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
+                                         "CourseName TEXT UNIQUE NOT NULL, Code TEXT UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
                                          "PreReqs TEXT, Instructor TEXT, Description TEXT, StudentNum INTEGER, " +
                                          "FOREIGN KEY (ProgID) REFERENCES Programs(Id) ON DELETE CASCADE )";
 
@@ -254,7 +254,38 @@ namespace Accredition_Assessment_Tracker.Handler
                 }
             }
         }
-
+        public List<string[]> PopulateCourses(int index)    //pulls course table info from the db
+        {
+            connectionStr = getConnStr();
+            List<string[]> output = new List<string[]>();   //list to hold each row
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                string readQuery = @"SELECT * FROM Courses WHERE ProgID = @index";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(readQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@index", index);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string[] entry = new string[9];
+                            entry[0] = reader["Id"].ToString();
+                            entry[1] = reader["ProgID"].ToString();
+                            entry[2] = reader["CourseName"].ToString();
+                            entry[3] = reader["Code"].ToString();
+                            entry[4] = reader["Hours"].ToString();
+                            entry[5] = reader["PreReqs"].ToString();
+                            entry[6] = reader["Instructor"].ToString();
+                            entry[7] = reader["Description"].ToString();
+                            entry[8] = reader["StudentNum"].ToString();
+                            output.Add(entry);
+                        }
+                        return output;
+                    }
+                }
+            }
+        }
         //Helper funcitons
         public int countEntries(string table)
         {
