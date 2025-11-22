@@ -16,6 +16,17 @@ namespace Accredition_Assessment_Tracker
         public Courses()
         {
             InitializeComponent();
+            Database db = new Database();
+            int entryCount = 0;
+            string[] programEntry;
+            entryCount = db.countEntries("Programs");
+            //Console.WriteLine(entryCount.ToString());
+            for (int i = 1; i < entryCount + 1; i++)    //adds all program names from table to dropdown box on start
+            {
+                programEntry = db.PopulatePrograms(i);
+                progIDDrpDwnBox.Items.Add(programEntry[1]);
+                //Console.WriteLine(programEntry[1]);
+            }
         }
 
         private void Backbtn_Click(object sender, EventArgs e)
@@ -29,6 +40,7 @@ namespace Accredition_Assessment_Tracker
         private void submitBtn_Click(object sender, EventArgs e)
         {
             string crsName = crsNameBox.Text;
+            int progID = progIDDrpDwnBox.SelectedIndex;
             string code = crsCodeBox.Text;
             int hours = Convert.ToInt32(crdHrsBox.Value);
             string preR = preReqBox.Text;
@@ -38,7 +50,12 @@ namespace Accredition_Assessment_Tracker
             //int enrollmentsByMajor;
             //Console.WriteLine($"{crsName}\n{code}\n{hours}\n{preR}\n{instrName}\n{crsDes}\n{stdNum}\n");  //for debugging
             Database db = new Database();
-            db.AddCourse(crsName, code, hours, preR, instrName, crsDes, stdNum);
+            db.AddCourse(crsName, progID, code, hours, preR, instrName, crsDes, stdNum);
+        }
+
+        private void progIDDrpDwnBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

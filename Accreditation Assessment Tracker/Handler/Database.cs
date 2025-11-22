@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SQLite;
-using System.IO;
-using System.Drawing.Text;
+using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Accredition_Assessment_Tracker.Handler
 {
@@ -44,11 +46,20 @@ namespace Accredition_Assessment_Tracker.Handler
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))   //populates db with tables
             {
                 //queries for constructing the tables
-                string createAssmntTable = @"CREATE TABLE IF NOT EXISTS Assessments ( Id INTEGER PRIMARY KEY AUTOINCREMENT, AsmntName TEXT, AsmntType TEXT NOT NULL, AsmntDate TEXT NOT NULL )";
-                string createProgTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, ProgName TEXT UNIQUE NOT NULL, Facilities TEXT," +
-                                                                                         " Faculty TEXT, Curriculum TEXT, StudentNum INTEGER, Outcomes TEXT )";
-                string createCrsTable = @"CREATE TABLE IF NOT EXISTS Courses ( Id INTEGER PRIMARY KEY AUTOINCREMENT, CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
-                                                                                         "PreReqs TEXT, Instructor TEXT, Description TEXT, StudentNum INTEGER )";
+                string createAssmntTable = @"CREATE TABLE IF NOT EXISTS Assessments ( Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                                             "CourseID INT NOT NULL, " +
+                                            "AsmntName TEXT, AsmntType TEXT NOT NULL, AsmntDate TEXT NOT NULL, " +
+                                            "FOREIGN KEY (CourseID) REFERENCES Courses(Id) ON DELETE CASCADE )";
+
+                string createProgTable = @"CREATE TABLE IF NOT EXISTS Programs ( Id INTEGER PRIMARY KEY AUTOINCREMENT, " + 
+                                          "ProgName TEXT UNIQUE NOT NULL, Facilities TEXT, " +
+                                          "Faculty TEXT, Curriculum TEXT, StudentNum INTEGER, Outcomes TEXT )";
+
+                string createCrsTable = @"CREATE TABLE IF NOT EXISTS Courses ( Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                                         "ProgID INT NOT NULL, " +
+                                         "CourseName TEXT UNIQUE NOT NULL, Code INTEGER UNIQUE NOT NULL, Hours INTEGER NOT NULL, " +
+                                         "PreReqs TEXT, Instructor TEXT, Description TEXT, StudentNum INTEGER, " +
+                                         "FOREIGN KEY (ProgID) REFERENCES Programs(Id) ON DELETE CASCADE )";
 
                 //execute each query
                 connection.Open();
@@ -100,8 +111,8 @@ namespace Accredition_Assessment_Tracker.Handler
             db.ClearDB();
             for (int i = 0; i < 10; i++)
             {
-                db.AddAssesment($"TestNM{i}", "Quiz", $"11/1{i}/2000");
-                db.AddCourse($"Test Course 11{i}", $"TST-11{i}", 3, $"TST-10{i}", "Dr. Saul Realman", $"Descriptive test text{i}", 30 + i);
+                db.AddAssesment($"TestNM{i}", i, "Quiz", $"11/1{i}/2000");
+                db.AddCourse($"Test Course 11{i}", i, $"TST-11{i}", 3, $"TST-10{i}", "Dr. Saul Realman", $"Descriptive test text{i}", 30 + i);
                 db.AddProgram($"Program Name{i}", $"Lab 11{i}", $"Instructors: {i}", $"linkToACurr{i}", 1000 + i, $"Descriptive outcome text{i}");
             }
         }
@@ -115,8 +126,7 @@ namespace Accredition_Assessment_Tracker.Handler
                 connection.Open();
                 using (SQLiteCommand command = new SQLiteCommand(delQuery, connection))
                 {
-                    int rows = command.ExecuteNonQuery(); // number of rows deleted
-                    return rows;
+                    return rowsAff = command.ExecuteNonQuery();
                 }
             }
         }
@@ -150,17 +160,18 @@ namespace Accredition_Assessment_Tracker.Handler
         }
 
         //Assesment Functions
-        public void AddAssesment(string name, string type, string date)
+        public void AddAssesment(string name, int crsID, string type, string date)
         {
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-                string insertQuery = @"INSERT INTO Assessments (AsmntName, AsmntType, AsmntDate) VALUES(@Name, @Type, @Date);"; //insertion query
+                string insertQuery = @"INSERT INTO Assessments (AsmntName, CourseID, AsmntType, AsmntDate) VALUES(@Name, @crsID, @Type, @Date);"; //insertion query
 
                 connection.Open();
                 using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
                 {
                     command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@crsID", crsID);
                     command.Parameters.AddWithValue("@Type", type);
                     command.Parameters.AddWithValue("@Date", date);
                     command.ExecuteNonQuery();
@@ -222,16 +233,17 @@ namespace Accredition_Assessment_Tracker.Handler
         }
 
         //Course Functions
-        public void AddCourse(string crsName, string code, int hrs, string preReq, string instrName, string desc, int stdNum)
+        public void AddCourse(string crsName, int progID, string code, int hrs, string preReq, string instrName, string desc, int stdNum)
         {
             connectionStr = getConnStr();
             using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
             {
-                string insertQuery = @"INSERT INTO Courses(CourseName, Code, Hours, PreReqs, Instructor, Description, StudentNum) VALUES(@crsName, @code, @hrs, @preReq, @instrName, @desc, @stdNum)";
+                string insertQuery = @"INSERT INTO Courses(CourseName, ProgID, Code, Hours, PreReqs, Instructor, Description, StudentNum) VALUES(@crsName, @progID, @code, @hrs, @preReq, @instrName, @desc, @stdNum)";
                 connection.Open();
                 using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
                 {
                     command.Parameters.AddWithValue("@crsName", crsName);
+                    command.Parameters.AddWithValue("@progID", progID);
                     command.Parameters.AddWithValue("@code", code);
                     command.Parameters.AddWithValue("@hrs", hrs);
                     command.Parameters.AddWithValue("@preReq", preReq);
