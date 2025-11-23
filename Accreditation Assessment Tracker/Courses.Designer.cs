@@ -44,12 +44,7 @@
             this.crsDescBox = new System.Windows.Forms.TextBox();
             this.submitBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.stdNumBox = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.crdHrsBox = new System.Windows.Forms.NumericUpDown();
@@ -190,12 +185,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.stdNumBox);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Location = new System.Drawing.Point(16, 383);
             this.groupBox1.Name = "groupBox1";
@@ -203,56 +193,12 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(270, 94);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(55, 20);
-            this.textBox9.TabIndex = 18;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(126, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(143, 16);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Computer Engineering:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(125, 64);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 16);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Computer Science:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(244, 62);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(55, 20);
-            this.textBox8.TabIndex = 15;
-            // 
             // stdNumBox
             // 
             this.stdNumBox.Location = new System.Drawing.Point(244, 19);
             this.stdNumBox.Name = "stdNumBox";
             this.stdNumBox.Size = new System.Drawing.Size(70, 20);
             this.stdNumBox.TabIndex = 14;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 20);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "By Major:";
             // 
             // label10
             // 
@@ -355,13 +301,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown stdNumBox;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown crdHrsBox;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ComboBox progIDDrpDwnBox;
         private System.Windows.Forms.Label label7;
     }

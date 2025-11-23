@@ -50,7 +50,30 @@ namespace Accredition_Assessment_Tracker
             //int enrollmentsByMajor;
             //Console.WriteLine($"{crsName}\n{code}\n{hours}\n{preR}\n{instrName}\n{crsDes}\n{stdNum}\n");  //for debugging
             Database db = new Database();
-            db.AddCourse(crsName, progID, code, hours, preR, instrName, crsDes, stdNum);
+
+            try
+            {
+                db.AddCourse(crsName, progID, code, hours, preR, instrName, crsDes, stdNum);
+                MessageBox.Show($"Course: {crsName} successfully submitted.");
+            }
+            catch(Exception ex)
+            {
+                string[] errMes = ex.Message.Split('.');
+                if (errMes[1] == "CourseName")
+                {
+                    MessageBox.Show($"Error: Entry already exists with course name {crsName}");
+                }
+                else if (errMes[1] == "Code")
+                {
+                    MessageBox.Show($"Error: Entry already exists with course code {code}");
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+
+            }
+            
         }
 
         private void progIDDrpDwnBox_SelectedIndexChanged(object sender, EventArgs e)
