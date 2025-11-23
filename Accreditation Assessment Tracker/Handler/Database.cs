@@ -179,6 +179,34 @@ namespace Accredition_Assessment_Tracker.Handler
             }
 
         }
+        public List<string[]> PopulateAssessments(int crsIndex)    //pulls assessments table info from the db
+        {
+            connectionStr = getConnStr();
+            List<string[]> output = new List<string[]>();   //list to hold each row
+            using (SQLiteConnection connection = new SQLiteConnection(connectionStr))
+            {
+                string readQuery = @"SELECT * FROM Assessments WHERE CourseID = @crsIndex";
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(readQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@crsIndex", crsIndex);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string[] entry = new string[5];
+                            entry[0] = reader["Id"].ToString();
+                            entry[1] = reader["CourseID"].ToString();
+                            entry[2] = reader["AsmntName"].ToString();
+                            entry[3] = reader["AsmntType"].ToString();
+                            entry[4] = reader["AsmntDate"].ToString();
+                            output.Add(entry);
+                        }
+                        return output;
+                    }
+                }
+            }
+        }
 
         //Program Functions
         public void AddProgram(string progName, string facil, string facul, string curr, int stnNum, string outcm)  //adds a program to the program table in db
