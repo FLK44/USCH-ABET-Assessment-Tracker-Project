@@ -70,10 +70,16 @@ namespace Accredition_Assessment_Tracker
                 {
                     continue;
                 }
-
-                _db.AddAssesment(name, crsID, type, date);
+                try
+                {
+                    _db.AddAssesment(name, crsID, type, date);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+                
             }
-
             MessageBox.Show("Assessments saved successfully.");
         }
 

@@ -41,7 +41,7 @@ namespace Accredition_Assessment_Tracker
             numSudentsBox.Value = Convert.ToInt32(programEntry[5]); //num of students
             outcomesTextBox.Text = programEntry[6];     //outcomes
 
-            for (int i = 0; i < courseEntries.Count; i++)
+            for (int i = 0; i < courseEntries.Count; i++)   //course list
             {
                 //Console.WriteLine("--------------------------");
                 //Console.WriteLine(courseEntries[i][0]);
@@ -102,7 +102,25 @@ namespace Accredition_Assessment_Tracker
 
             //Console.WriteLine($"{progName}\n{facilitiesText}\n{facultyText}\n{currText}\n{stNum}\n{outCms}\n"); //for debugging
             Database db = new Database();
-            db.AddProgram(progName, facilitiesText, facultyText, currText, stNum, outCms);
+            try
+            {
+                db.AddProgram(progName, facilitiesText, facultyText, currText, stNum, outCms);
+                MessageBox.Show($"Program: {progName} successfully submitted.");
+            }
+            catch (Exception ex)
+            {
+                string[] errMes = ex.Message.Split('.');
+                if (errMes[1] == "ProgName")
+                {
+                    MessageBox.Show($"Error: An entry already exists with program name {progName}.");
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+                
+            }
+            
         }
     }
 }
