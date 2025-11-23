@@ -53,9 +53,9 @@ namespace Accredition_Assessment_Tracker
             this.numSudentsBox = new System.Windows.Forms.NumericUpDown();
             this.outcomesTextBox = new System.Windows.Forms.TextBox();
             this.submitButton = new System.Windows.Forms.Button();
-            this.addCourseButton = new System.Windows.Forms.Button();
             this.programDrpDwnBox = new System.Windows.Forms.ComboBox();
-            this.addProgramButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.courseListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSudentsBox)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +93,8 @@ namespace Accredition_Assessment_Tracker
             // 
             // courseListGrid
             // 
+            this.courseListGrid.AllowUserToAddRows = false;
+            this.courseListGrid.AllowUserToDeleteRows = false;
             this.courseListGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.courseListGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -109,26 +111,31 @@ namespace Accredition_Assessment_Tracker
             // 
             this.Column1.HeaderText = "Course Name";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Course Code";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Credit Hours";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Pre-reqs";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Instructor Name";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // label5
             // 
@@ -260,17 +267,6 @@ namespace Accredition_Assessment_Tracker
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // addCourseButton
-            // 
-            this.addCourseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addCourseButton.Location = new System.Drawing.Point(662, 53);
-            this.addCourseButton.Name = "addCourseButton";
-            this.addCourseButton.Size = new System.Drawing.Size(123, 32);
-            this.addCourseButton.TabIndex = 24;
-            this.addCourseButton.Text = "Add New...";
-            this.addCourseButton.UseVisualStyleBackColor = true;
-            this.addCourseButton.Click += new System.EventHandler(this.addCourseButton_Click);
-            // 
             // programDrpDwnBox
             // 
             this.programDrpDwnBox.FormattingEnabled = true;
@@ -280,25 +276,34 @@ namespace Accredition_Assessment_Tracker
             this.programDrpDwnBox.TabIndex = 25;
             this.programDrpDwnBox.SelectedIndexChanged += new System.EventHandler(this.programDrpDwnBox_SelectedIndexChanged);
             // 
-            // addProgramButton
+            // label11
             // 
-            this.addProgramButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProgramButton.Location = new System.Drawing.Point(240, 4);
-            this.addProgramButton.Name = "addProgramButton";
-            this.addProgramButton.Size = new System.Drawing.Size(123, 32);
-            this.addProgramButton.TabIndex = 26;
-            this.addProgramButton.Text = "Add New...";
-            this.addProgramButton.UseVisualStyleBackColor = true;
-            this.addProgramButton.Click += new System.EventHandler(this.addProgramButton_Click);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(240, 11);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 13);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Or enter a new one";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(479, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(154, 13);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "*Ignore if entering new program";
             // 
             // Programs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 654);
-            this.Controls.Add(this.addProgramButton);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.programDrpDwnBox);
-            this.Controls.Add(this.addCourseButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.outcomesTextBox);
             this.Controls.Add(this.numSudentsBox);
@@ -346,13 +351,13 @@ namespace Accredition_Assessment_Tracker
         private System.Windows.Forms.NumericUpDown numSudentsBox;
         private System.Windows.Forms.TextBox outcomesTextBox;
         private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.Button addCourseButton;
         private System.Windows.Forms.ComboBox programDrpDwnBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button addProgramButton;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column3;
+        private Label label11;
+        private Label label12;
     }
 }
