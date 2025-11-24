@@ -80,5 +80,21 @@ namespace Accredition_Assessment_Tracker
         {
 
         }
+
+        // button to clear text boxes
+        private void Clearboxesbtn_Click(object sender, EventArgs e)
+        {
+           
+            crsNameBox.Text = "";
+            crsCodeBox.Text = "";
+            preReqBox.Text = "";
+            instNameBox.Text = "";
+            crsDescBox.Text = "";
+            crdHrsBox.Value = 0;
+            progIDDrpDwnBox.SelectedIndex = -1;
+            crsNameBox.Focus();
+
+            MessageBox.Show("Text boxes clear");
+        }
     }
 }

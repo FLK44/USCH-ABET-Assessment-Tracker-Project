@@ -21,35 +21,41 @@ namespace Accredition_Assessment_Tracker
         private void delDbBtn_Click(object sender, EventArgs e)
         {
             Database db = new Database();
+            db.initDB();
             db.ClearDB();
+
+            MessageBox.Show("All tables cleared successfully.", "Success");
 
         }
 
         private void delCrsTabBtn_Click(object sender, EventArgs e)
         {
-            int rowsAff;
             Database db = new Database();
-            rowsAff = db.ClearCourse();
-            Console.WriteLine($"Rows affected: {rowsAff}");
+            db.initDB();
+
+            int rows = db.ClearCourse();
+
+            MessageBox.Show($"Courses table cleared.\nRows deleted: {rows}", "Success");
         }
 
         private void delProgTabBtn_Click(object sender, EventArgs e)
         {
-            int rowsAff;
             Database db = new Database();
-            rowsAff = db.ClearProg();
-            Console.WriteLine($"Rows affected: {rowsAff}");
+            db.initDB();
+
+            int rows = db.ClearProg();
+
+            MessageBox.Show($"Programs table cleared.\nRows deleted: {rows}", "Success");
         }
 
         private void delAsmTabBtn_Click(object sender, EventArgs e)
         {
             Database db = new Database();
-            int rowsAff = db.ClearAsmnt();
-            MessageBox.Show(
-                $"Assessments table cleared.\nRows deleted: {rowsAff}",
-                "Clear Assessment Table",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            db.initDB();
+
+            int rows = db.ClearAsmnt();
+
+            MessageBox.Show($"Assessment table cleared.\nRows deleted: {rows}", "Success");
         }
 
         private void backBtn_Click(object sender, EventArgs e)

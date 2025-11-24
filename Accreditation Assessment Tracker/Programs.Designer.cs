@@ -34,11 +34,6 @@ namespace Accredition_Assessment_Tracker
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.courseListGrid = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,6 +51,13 @@ namespace Accredition_Assessment_Tracker
             this.programDrpDwnBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.courseListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSudentsBox)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@ namespace Accredition_Assessment_Tracker
             // Backbtn
             // 
             this.Backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Backbtn.Location = new System.Drawing.Point(16, 595);
+            this.Backbtn.Location = new System.Drawing.Point(16, 648);
             this.Backbtn.Name = "Backbtn";
             this.Backbtn.Size = new System.Drawing.Size(89, 47);
             this.Backbtn.TabIndex = 1;
@@ -85,7 +87,7 @@ namespace Accredition_Assessment_Tracker
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 53);
+            this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 3;
@@ -95,52 +97,25 @@ namespace Accredition_Assessment_Tracker
             // 
             this.courseListGrid.AllowUserToAddRows = false;
             this.courseListGrid.AllowUserToDeleteRows = false;
+            this.courseListGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.courseListGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.courseListGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column4,
             this.Column5,
-            this.Column3});
-            this.courseListGrid.Location = new System.Drawing.Point(106, 53);
+            this.Column3,
+            this.colDescription,
+            this.colStudentNum});
+            this.courseListGrid.Location = new System.Drawing.Point(16, 82);
             this.courseListGrid.Name = "courseListGrid";
-            this.courseListGrid.Size = new System.Drawing.Size(545, 199);
+            this.courseListGrid.Size = new System.Drawing.Size(806, 199);
             this.courseListGrid.TabIndex = 5;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Course Name";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Course Code";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Credit Hours";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Pre-reqs";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Instructor Name";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-7, 266);
+            this.label5.Location = new System.Drawing.Point(-7, 284);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(853, 13);
             this.label5.TabIndex = 10;
@@ -150,7 +125,7 @@ namespace Accredition_Assessment_Tracker
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(347, 279);
+            this.label3.Location = new System.Drawing.Point(348, 297);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 11;
@@ -159,7 +134,7 @@ namespace Accredition_Assessment_Tracker
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(-7, 299);
+            this.label4.Location = new System.Drawing.Point(-7, 317);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(856, 13);
             this.label4.TabIndex = 12;
@@ -169,7 +144,7 @@ namespace Accredition_Assessment_Tracker
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 325);
+            this.label6.Location = new System.Drawing.Point(11, 357);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 20);
             this.label6.TabIndex = 13;
@@ -179,7 +154,7 @@ namespace Accredition_Assessment_Tracker
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 354);
+            this.label7.Location = new System.Drawing.Point(12, 395);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 20);
             this.label7.TabIndex = 14;
@@ -189,7 +164,7 @@ namespace Accredition_Assessment_Tracker
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 386);
+            this.label8.Location = new System.Drawing.Point(12, 427);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 20);
             this.label8.TabIndex = 15;
@@ -199,7 +174,7 @@ namespace Accredition_Assessment_Tracker
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 419);
+            this.label9.Location = new System.Drawing.Point(12, 469);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(156, 20);
             this.label9.TabIndex = 16;
@@ -209,7 +184,7 @@ namespace Accredition_Assessment_Tracker
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 448);
+            this.label10.Location = new System.Drawing.Point(12, 507);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(155, 20);
             this.label10.TabIndex = 17;
@@ -217,28 +192,28 @@ namespace Accredition_Assessment_Tracker
             // 
             // facilitiesTextBox
             // 
-            this.facilitiesTextBox.Location = new System.Drawing.Point(92, 325);
+            this.facilitiesTextBox.Location = new System.Drawing.Point(91, 357);
             this.facilitiesTextBox.Name = "facilitiesTextBox";
             this.facilitiesTextBox.Size = new System.Drawing.Size(248, 20);
             this.facilitiesTextBox.TabIndex = 18;
             // 
             // facultyTextBox
             // 
-            this.facultyTextBox.Location = new System.Drawing.Point(92, 356);
+            this.facultyTextBox.Location = new System.Drawing.Point(82, 395);
             this.facultyTextBox.Name = "facultyTextBox";
             this.facultyTextBox.Size = new System.Drawing.Size(248, 20);
             this.facultyTextBox.TabIndex = 19;
             // 
             // currTextBox
             // 
-            this.currTextBox.Location = new System.Drawing.Point(106, 388);
+            this.currTextBox.Location = new System.Drawing.Point(106, 427);
             this.currTextBox.Name = "currTextBox";
             this.currTextBox.Size = new System.Drawing.Size(248, 20);
             this.currTextBox.TabIndex = 20;
             // 
             // numSudentsBox
             // 
-            this.numSudentsBox.Location = new System.Drawing.Point(174, 419);
+            this.numSudentsBox.Location = new System.Drawing.Point(174, 472);
             this.numSudentsBox.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -250,7 +225,7 @@ namespace Accredition_Assessment_Tracker
             // 
             // outcomesTextBox
             // 
-            this.outcomesTextBox.Location = new System.Drawing.Point(173, 450);
+            this.outcomesTextBox.Location = new System.Drawing.Point(174, 507);
             this.outcomesTextBox.Multiline = true;
             this.outcomesTextBox.Name = "outcomesTextBox";
             this.outcomesTextBox.Size = new System.Drawing.Size(282, 113);
@@ -259,7 +234,7 @@ namespace Accredition_Assessment_Tracker
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(271, 595);
+            this.submitButton.Location = new System.Drawing.Point(282, 648);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(89, 33);
             this.submitButton.TabIndex = 23;
@@ -290,17 +265,64 @@ namespace Accredition_Assessment_Tracker
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(479, 37);
+            this.label12.Location = new System.Drawing.Point(668, 66);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(154, 13);
             this.label12.TabIndex = 27;
             this.label12.Text = "*Ignore if entering new program";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Course Name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 88;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Course Code";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 86;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Credit Hours";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 83;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Pre-reqs";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 71;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Instructor Name";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 98;
+            // 
+            // colDescription
+            // 
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.Width = 85;
+            // 
+            // colStudentNum
+            // 
+            this.colStudentNum.HeaderText = "Students";
+            this.colStudentNum.Name = "colStudentNum";
+            this.colStudentNum.Width = 74;
+            // 
             // Programs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 654);
+            this.ClientSize = new System.Drawing.Size(834, 725);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.programDrpDwnBox);
@@ -352,12 +374,14 @@ namespace Accredition_Assessment_Tracker
         private System.Windows.Forms.TextBox outcomesTextBox;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.ComboBox programDrpDwnBox;
+        private Label label11;
+        private Label label12;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column3;
-        private Label label11;
-        private Label label12;
+        private DataGridViewTextBoxColumn colDescription;
+        private DataGridViewTextBoxColumn colStudentNum;
     }
 }

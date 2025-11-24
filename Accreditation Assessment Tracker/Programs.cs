@@ -60,7 +60,8 @@ namespace Accredition_Assessment_Tracker
                 courseListGrid.Rows[newRow].Cells[2].Value = courseEntries[i][4];
                 courseListGrid.Rows[newRow].Cells[3].Value = courseEntries[i][5];
                 courseListGrid.Rows[newRow].Cells[4].Value = courseEntries[i][6];
-                
+                courseListGrid.Rows[newRow].Cells[5].Value = courseEntries[i][7];
+                courseListGrid.Rows[newRow].Cells[6].Value = courseEntries[i][8];
             }
         }
         private void Backbtn_Click(object sender, EventArgs e)

@@ -47,7 +47,7 @@
             // Backbtn
             // 
             this.Backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Backbtn.Location = new System.Drawing.Point(35, 431);
+            this.Backbtn.Location = new System.Drawing.Point(35, 458);
             this.Backbtn.Name = "Backbtn";
             this.Backbtn.Size = new System.Drawing.Size(129, 44);
             this.Backbtn.TabIndex = 1;
@@ -93,6 +93,7 @@
             this.crsIDDrpDwnBox.Name = "crsIDDrpDwnBox";
             this.crsIDDrpDwnBox.Size = new System.Drawing.Size(121, 21);
             this.crsIDDrpDwnBox.TabIndex = 5;
+            this.crsIDDrpDwnBox.SelectedIndexChanged += new System.EventHandler(this.crsIDDrpDwnBox_SelectedIndexChanged);
             // 
             // progIDDrpDwnBox
             // 
@@ -117,6 +118,7 @@
             // assessmentGridView
             // 
             this.assessmentGridView.AllowUserToOrderColumns = true;
+            this.assessmentGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.assessmentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assessmentGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AssessmentTypeColumn,
@@ -124,27 +126,30 @@
             this.AssessmentDateColumn});
             this.assessmentGridView.Location = new System.Drawing.Point(35, 162);
             this.assessmentGridView.Name = "assessmentGridView";
-            this.assessmentGridView.Size = new System.Drawing.Size(346, 184);
+            this.assessmentGridView.Size = new System.Drawing.Size(385, 263);
             this.assessmentGridView.TabIndex = 8;
             // 
             // AssessmentTypeColumn
             // 
             this.AssessmentTypeColumn.HeaderText = "Assessment Type";
             this.AssessmentTypeColumn.Name = "AssessmentTypeColumn";
+            this.AssessmentTypeColumn.Width = 106;
             // 
             // AssessmentNameColumn
             // 
             this.AssessmentNameColumn.HeaderText = "Assessment Name";
             this.AssessmentNameColumn.Name = "AssessmentNameColumn";
+            this.AssessmentNameColumn.Width = 109;
             // 
             // AssessmentDateColumn
             // 
             this.AssessmentDateColumn.HeaderText = "Date";
             this.AssessmentDateColumn.Name = "AssessmentDateColumn";
+            this.AssessmentDateColumn.Width = 55;
             // 
             // addNewAssementBtn
             // 
-            this.addNewAssementBtn.Location = new System.Drawing.Point(413, 162);
+            this.addNewAssementBtn.Location = new System.Drawing.Point(459, 162);
             this.addNewAssementBtn.Name = "addNewAssementBtn";
             this.addNewAssementBtn.Size = new System.Drawing.Size(119, 38);
             this.addNewAssementBtn.TabIndex = 9;
@@ -154,7 +159,7 @@
             // 
             // Savebtn
             // 
-            this.Savebtn.Location = new System.Drawing.Point(413, 439);
+            this.Savebtn.Location = new System.Drawing.Point(322, 485);
             this.Savebtn.Name = "Savebtn";
             this.Savebtn.Size = new System.Drawing.Size(98, 29);
             this.Savebtn.TabIndex = 10;
@@ -166,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 500);
+            this.ClientSize = new System.Drawing.Size(594, 524);
             this.Controls.Add(this.Savebtn);
             this.Controls.Add(this.addNewAssementBtn);
             this.Controls.Add(this.label4);

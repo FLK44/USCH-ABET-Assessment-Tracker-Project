@@ -50,6 +50,7 @@
             this.crdHrsBox = new System.Windows.Forms.NumericUpDown();
             this.progIDDrpDwnBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.Clearboxesbtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdNumBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crdHrsBox)).BeginInit();
@@ -58,7 +59,7 @@
             // Backbtn
             // 
             this.Backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Backbtn.Location = new System.Drawing.Point(15, 594);
+            this.Backbtn.Location = new System.Drawing.Point(16, 459);
             this.Backbtn.Name = "Backbtn";
             this.Backbtn.Size = new System.Drawing.Size(123, 47);
             this.Backbtn.TabIndex = 0;
@@ -174,7 +175,7 @@
             // submitBtn
             // 
             this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.Location = new System.Drawing.Point(241, 594);
+            this.submitBtn.Location = new System.Drawing.Point(241, 459);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(146, 31);
             this.submitBtn.TabIndex = 16;
@@ -189,7 +190,7 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Location = new System.Drawing.Point(16, 383);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(640, 182);
+            this.groupBox1.Size = new System.Drawing.Size(640, 59);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
@@ -247,11 +248,23 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Program Name:";
             // 
+            // Clearboxesbtn
+            // 
+            this.Clearboxesbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clearboxesbtn.Location = new System.Drawing.Point(564, 453);
+            this.Clearboxesbtn.Name = "Clearboxesbtn";
+            this.Clearboxesbtn.Size = new System.Drawing.Size(92, 42);
+            this.Clearboxesbtn.TabIndex = 22;
+            this.Clearboxesbtn.Text = "Clear Text Boxes";
+            this.Clearboxesbtn.UseVisualStyleBackColor = true;
+            this.Clearboxesbtn.Click += new System.EventHandler(this.Clearboxesbtn_Click);
+            // 
             // Courses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 650);
+            this.ClientSize = new System.Drawing.Size(668, 508);
+            this.Controls.Add(this.Clearboxesbtn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.progIDDrpDwnBox);
             this.Controls.Add(this.crdHrsBox);
@@ -305,5 +318,6 @@
         private System.Windows.Forms.NumericUpDown crdHrsBox;
         private System.Windows.Forms.ComboBox progIDDrpDwnBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button Clearboxesbtn;
     }
 }
