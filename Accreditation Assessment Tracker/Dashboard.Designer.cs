@@ -48,7 +48,7 @@
             // GoToCoursesbtn
             // 
             this.GoToCoursesbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoToCoursesbtn.Location = new System.Drawing.Point(109, 82);
+            this.GoToCoursesbtn.Location = new System.Drawing.Point(336, 79);
             this.GoToCoursesbtn.Name = "GoToCoursesbtn";
             this.GoToCoursesbtn.Size = new System.Drawing.Size(152, 39);
             this.GoToCoursesbtn.TabIndex = 1;
@@ -59,7 +59,7 @@
             // GoToAssessmentsbtn
             // 
             this.GoToAssessmentsbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoToAssessmentsbtn.Location = new System.Drawing.Point(209, 166);
+            this.GoToAssessmentsbtn.Location = new System.Drawing.Point(214, 159);
             this.GoToAssessmentsbtn.Name = "GoToAssessmentsbtn";
             this.GoToAssessmentsbtn.Size = new System.Drawing.Size(152, 39);
             this.GoToAssessmentsbtn.TabIndex = 3;
@@ -70,7 +70,7 @@
             // GoToProgramsbtn
             // 
             this.GoToProgramsbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoToProgramsbtn.Location = new System.Drawing.Point(316, 82);
+            this.GoToProgramsbtn.Location = new System.Drawing.Point(123, 79);
             this.GoToProgramsbtn.Name = "GoToProgramsbtn";
             this.GoToProgramsbtn.Size = new System.Drawing.Size(152, 39);
             this.GoToProgramsbtn.TabIndex = 4;
@@ -80,7 +80,7 @@
             // 
             // settingBtn
             // 
-            this.settingBtn.Location = new System.Drawing.Point(247, 247);
+            this.settingBtn.Location = new System.Drawing.Point(248, 247);
             this.settingBtn.Name = "settingBtn";
             this.settingBtn.Size = new System.Drawing.Size(75, 23);
             this.settingBtn.TabIndex = 5;
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 282);
+            this.ClientSize = new System.Drawing.Size(610, 282);
             this.Controls.Add(this.settingBtn);
             this.Controls.Add(this.GoToProgramsbtn);
             this.Controls.Add(this.GoToAssessmentsbtn);

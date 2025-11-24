@@ -39,6 +39,19 @@ namespace Accredition_Assessment_Tracker
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
+            // prevent submission until all datas are entered
+            if (string.IsNullOrWhiteSpace(crsNameBox.Text) ||
+                progIDDrpDwnBox.SelectedIndex < 0 ||
+                string.IsNullOrWhiteSpace(crsCodeBox.Text) ||
+                crdHrsBox.Value <= 0 ||
+                string.IsNullOrWhiteSpace(instNameBox.Text))
+            {
+                MessageBox.Show("Please enter all information before submitting.",
+                                "Missing Information",
+                                MessageBoxButtons.OK);
+                return;
+            }
+
             string crsName = crsNameBox.Text;
             int progID = progIDDrpDwnBox.SelectedIndex;
             string code = crsCodeBox.Text;
@@ -95,6 +108,11 @@ namespace Accredition_Assessment_Tracker
             crsNameBox.Focus();
 
             MessageBox.Show("Text boxes clear");
+        }
+
+        private void Courses_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

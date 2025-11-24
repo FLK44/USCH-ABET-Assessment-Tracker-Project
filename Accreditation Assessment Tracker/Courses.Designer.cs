@@ -286,6 +286,7 @@
             this.Controls.Add(this.Backbtn);
             this.Name = "Courses";
             this.Text = "Courses";
+            this.Load += new System.EventHandler(this.Courses_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stdNumBox)).EndInit();

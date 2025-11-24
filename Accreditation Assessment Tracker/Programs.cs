@@ -94,6 +94,21 @@ namespace Accredition_Assessment_Tracker
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            // prevent submission until all datas are entered
+            if (string.IsNullOrWhiteSpace(programDrpDwnBox.Text) ||
+                string.IsNullOrWhiteSpace(facilitiesTextBox.Text) ||
+                string.IsNullOrWhiteSpace(facultyTextBox.Text) ||
+                string.IsNullOrWhiteSpace(currTextBox.Text) ||
+                string.IsNullOrWhiteSpace(outcomesTextBox.Text) ||
+                numSudentsBox.Value == 0)
+            {
+                MessageBox.Show("Please enter all information before submitting.",
+                                "Missing Information",
+                                MessageBoxButtons.OK);                  
+                return;
+            }
+
+
             string progName = programDrpDwnBox.Text;
             string facilitiesText = facilitiesTextBox.Text;
             string facultyText = facultyTextBox.Text;
@@ -122,6 +137,11 @@ namespace Accredition_Assessment_Tracker
                 
             }
             
+        }
+
+        private void Programs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

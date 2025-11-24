@@ -68,13 +68,12 @@ namespace Accredition_Assessment_Tracker
             {
                 MessageBox.Show("Please select a Program and Course before saving.",
                                 "Missing Selection",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                                MessageBoxButtons.OK);
                 return;
             }
 
             // Check if any data rows exist
-            if (assessmentGridView.Rows.Count <= 1)
+            if (assessmentGridView.Rows.Count == 0)
             {
                 MessageBox.Show("No assessments to save.", "Empty Table");
                 return;

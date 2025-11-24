@@ -34,6 +34,13 @@ namespace Accredition_Assessment_Tracker
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.courseListGrid = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,13 +58,6 @@ namespace Accredition_Assessment_Tracker
             this.programDrpDwnBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStudentNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.courseListGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSudentsBox)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +111,53 @@ namespace Accredition_Assessment_Tracker
             this.courseListGrid.Name = "courseListGrid";
             this.courseListGrid.Size = new System.Drawing.Size(806, 199);
             this.courseListGrid.TabIndex = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Course Name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 88;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Course Code";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 86;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Credit Hours";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 83;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Pre-reqs";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 71;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Instructor Name";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 98;
+            // 
+            // colDescription
+            // 
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.Width = 85;
+            // 
+            // colStudentNum
+            // 
+            this.colStudentNum.HeaderText = "Students";
+            this.colStudentNum.Name = "colStudentNum";
+            this.colStudentNum.Width = 74;
             // 
             // label5
             // 
@@ -271,53 +318,6 @@ namespace Accredition_Assessment_Tracker
             this.label12.TabIndex = 27;
             this.label12.Text = "*Ignore if entering new program";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Course Name";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 88;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Course Code";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 86;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Credit Hours";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 83;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Pre-reqs";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 71;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Instructor Name";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 98;
-            // 
-            // colDescription
-            // 
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.Width = 85;
-            // 
-            // colStudentNum
-            // 
-            this.colStudentNum.HeaderText = "Students";
-            this.colStudentNum.Name = "colStudentNum";
-            this.colStudentNum.Width = 74;
-            // 
             // Programs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +346,7 @@ namespace Accredition_Assessment_Tracker
             this.Controls.Add(this.Backbtn);
             this.Name = "Programs";
             this.Text = "Programs";
+            this.Load += new System.EventHandler(this.Programs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.courseListGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSudentsBox)).EndInit();
             this.ResumeLayout(false);
